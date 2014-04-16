@@ -7,7 +7,7 @@
 #   Test script to check fsopen() access modes.
 #
 # COPYRIGHT
-#   Copyright (C) 2001-2006 Steve Hay.  All rights reserved.
+#   Copyright (C) 2001-2006, 2014 Steve Hay.  All rights reserved.
 #
 # LICENCE
 #   You may distribute under the terms of either the GNU General Public License
@@ -15,14 +15,14 @@
 #
 #===============================================================================
 
-use 5.006000;
+use 5.008001;
 
 use strict;
 use warnings;
 
 use Config qw(%Config);
 use Errno qw(EACCES ENOENT);
-use Test::More tests => 51;
+use Test::More tests => 52;
 use Win32::WinError qw(ERROR_ACCESS_DENIED ERROR_FILE_NOT_FOUND);
 
 #===============================================================================
@@ -49,13 +49,11 @@ MAIN: {
 
     $fh = new_fh();
     $ret = fsopen($fh, $file, 'r', SH_DENYNO);
-    ($errno, $lasterror) = ($! + 0, $^E + 0);
+    # Borland C++ builds of perl seem to wipe out $^E if $! is accessed first.
+    ($lasterror, $errno) = ($^E + 0, $! + 0);
     is($ret, undef, "fsopen() initially fails with 'r'");
     is($errno, ENOENT, '... and sets $! correctly');
-    SKIP: {
-        skip "Borland CRT doesn't set Win32 last error code", 1 if $bcc;
-        is($lasterror, ERROR_FILE_NOT_FOUND, '... and sets $^E correctly');
-    }
+    is($lasterror, ERROR_FILE_NOT_FOUND, '... and sets $^E correctly');
 
     $fh = new_fh();
     $ret = fsopen($fh, $file, 'w', SH_DENYNO);
@@ -113,13 +111,10 @@ MAIN: {
 
     $fh = new_fh();
     $ret = fsopen($fh, $file, 'r+', SH_DENYNO);
-    ($errno, $lasterror) = ($! + 0, $^E + 0);
+    ($lasterror, $errno) = ($^E + 0, $! + 0);
     is($ret, undef, "fsopen() initially fails with 'r+'");
     is($errno, ENOENT, '... and sets $! correctly');
-    SKIP: {
-        skip "Borland CRT doesn't set Win32 last error code", 1 if $bcc;
-        is($lasterror, ERROR_FILE_NOT_FOUND, '... and sets $^E correctly');
-    }
+    is($lasterror, ERROR_FILE_NOT_FOUND, '... and sets $^E correctly');
 
     $fh = new_fh();
     $ret = fsopen($fh, $file, 'w+', SH_DENYNO);
@@ -196,25 +191,28 @@ MAIN: {
 
     unlink $file;
 
-    $fh = new_fh();
-    $ret = fsopen($fh, '.', 'r', SH_DENYNO);
-    ($errno, $lasterror) = ($! + 0, $^E + 0);
-    is($ret, undef, 'fsopen() fails reading a directory');
-    is($errno, EACCES, '... and sets $! correctly');
     SKIP: {
-        skip "Borland CRT doesn't set Win32 last error code", 1 if $bcc;
-        is($lasterror, ERROR_ACCESS_DENIED, '... and sets $^E correctly');
+        skip "Borland C RTL doesn't support 'D'", 1 if $bcc;
+        $fh = new_fh();
+        fsopen($fh, $file, "wD", SH_DENYNO);
+        print $fh "$str\n";
+        close $fh;
+        ok(! -e $file, "'D' works");
     }
 
     $fh = new_fh();
+    $ret = fsopen($fh, '.', 'r', SH_DENYNO);
+    ($lasterror, $errno) = ($^E + 0, $! + 0);
+    is($ret, undef, 'fsopen() fails reading a directory');
+    is($errno, EACCES, '... and sets $! correctly');
+    is($lasterror, ERROR_ACCESS_DENIED, '... and sets $^E correctly');
+
+    $fh = new_fh();
     $ret = fsopen($fh, '.', 'w', SH_DENYNO);
-    ($errno, $lasterror) = ($! + 0, $^E + 0);
+    ($lasterror, $errno) = ($^E + 0, $! + 0);
     is($ret, undef, 'fsopen() fails writing a directory');
     is($errno, EACCES, '... and sets $! correctly');
-    SKIP: {
-        skip "Borland CRT doesn't set Win32 last error code", 1 if $bcc;
-        is($lasterror, ERROR_ACCESS_DENIED, '... and sets $^E correctly');
-    }
+    is($lasterror, ERROR_ACCESS_DENIED, '... and sets $^E correctly');
 
     $fh = new_fh();
     fsopen($fh, $file, 'w', SH_DENYNO);
@@ -231,13 +229,10 @@ MAIN: {
 
     $fh = new_fh();
     $ret = fsopen($fh, $file, 'w', SH_DENYNO);
-    ($errno, $lasterror) = ($! + 0, $^E + 0);
+    ($lasterror, $errno) = ($^E + 0, $! + 0);
     is($ret, undef, 'fsopen() fails writing a read-only file');
     is($errno, EACCES, '... and sets $! correctly');
-    SKIP: {
-        skip "Borland CRT doesn't set Win32 last error code", 1 if $bcc;
-        is($lasterror, ERROR_ACCESS_DENIED, '... and sets $^E correctly');
-    }
+    is($lasterror, ERROR_ACCESS_DENIED, '... and sets $^E correctly');
 
     unlink $file;
 }

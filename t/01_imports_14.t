@@ -1,13 +1,13 @@
 #!perl
 #===============================================================================
 #
-# t/11_sopen_fh_leak.t
+# t/01_imports_12.t
 #
 # DESCRIPTION
-#   Test script to check if sopen() leaks filehandles.
+#   Test script to check import options.
 #
 # COPYRIGHT
-#   Copyright (C) 2002, 2004-2005, 2014 Steve Hay.  All rights reserved.
+#   Copyright (C) 2014 Steve Hay.  All rights reserved.
 #
 # LICENCE
 #   You may distribute under the terms of either the GNU General Public License
@@ -20,14 +20,14 @@ use 5.008001;
 use strict;
 use warnings;
 
-use Test::More tests => 513;
+use Test::More tests => 9;
 
 #===============================================================================
 # INITIALIZATION
 #===============================================================================
 
 BEGIN {
-    use_ok('Win32::SharedFileOpen', qw(:DEFAULT new_fh));
+    use_ok('Win32::SharedFileOpen', qw(:DEFAULT gensym new_fh :retry));
 }
 
 #===============================================================================
@@ -35,17 +35,14 @@ BEGIN {
 #===============================================================================
 
 MAIN: {
-    my $file = 'test.txt';
-
-    for my $i (1 .. 512) {
-        my $fh = new_fh();
-        my $ret = sopen($fh, $file, O_WRONLY | O_CREAT | O_TRUNC, SH_DENYNO,
-                        S_IWRITE);
-        my($errno, $lasterror) = ($!, $^E);
-        ok($ret, "filehandle $i works")
-            ? close $fh : diag("\$! = '$errno', \$^E = '$lasterror'");
-        unlink $file;
-    }
+    ok(defined &main::fsopen, 'fsopen() is imported');
+    ok(defined &main::sopen,  'sopen() is imported');
+    ok(defined &main::gensym, 'gensym() is imported');
+    ok(defined &main::new_fh, 'new_fh() is imported');
+    ok(eval { O_APPEND(); 1 }, 'O_APPEND is imported');
+    ok(eval { S_IREAD(); 1 }, 'S_IREAD is imported');
+    ok(eval { SH_DENYNO(); 1 }, 'SH_DENYNO is imported');
+    ok(eval { INFINITE(); 1 }, 'INFINITE is imported');
 }
 
 #===============================================================================
