@@ -35,12 +35,13 @@ BEGIN {
 #===============================================================================
 
 MAIN: {
-    my $file = 'test.txt';
+    my($fh, $file, $ret, $errno, $lasterror);
 
     for my $i (1 .. 512) {
-        my $fh = new_fh();
-        my $ret = fsopen($fh, $file, 'w', SH_DENYNO);
-        my($errno, $lasterror) = ($!, $^E);
+        $fh = new_fh();
+        $file = "test$i.txt";
+        $ret = fsopen($fh, $file, 'w', SH_DENYNO);
+        ($errno, $lasterror) = ($!, $^E);
         ok($ret, "filehandle $i works")
             ? close $fh : diag("\$! = '$errno', \$^E = '$lasterror'");
         unlink $file;

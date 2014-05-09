@@ -8,6 +8,10 @@ _________________
 
 v4.00 TODO
 
+    - Fixed occasional test failures in t/10_fsopen_fh_leak.t and
+      t/11_sopen_fh_leak.t by avoiding the problem of trying to open a file with
+      a pending delete.
+
     - Added support for the 'R', 'S', 'T' and 'D' characters in the mode string
       argument to fsopen().  These were added to the Microsoft C library
       function _fsopen() in Visual Studio 2012 (VC11), but we can support them
