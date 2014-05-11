@@ -10,7 +10,8 @@ v4.00 TODO
 
     - Fixed occasional test failures in t/10_fsopen_fh_leak.t and
       t/11_sopen_fh_leak.t by avoiding the problem of trying to open a file with
-      a pending delete.
+      a pending delete.  Also avoided similar possible test failures in
+      t/06_fsopen_access.t, t/07_sopen_access.t and t/12_variables.pod.
 
     - Added support for the 'R', 'S', 'T' and 'D' characters in the mode string
       argument to fsopen().  These were added to the Microsoft C library

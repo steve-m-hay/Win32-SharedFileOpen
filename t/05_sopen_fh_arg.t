@@ -45,8 +45,6 @@ MAIN: {
     my($fh, $ret, $errno, $lasterror);
     local *FH;
 
-    unlink $file or die "Can't delete file '$file': $!\n" if -e $file;
-
     eval {
         undef $fh;
         sopen($fh, $file, O_WRONLY | O_CREAT | O_TRUNC, SH_DENYNO, S_IWRITE);
