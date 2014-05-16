@@ -6,7 +6,7 @@ ________________________________________________________________________________
 Revision history for Perl extension Win32::SharedFileOpen.
 _________________
 
-v4.00 TODO
+v4.00 16 May 2014
 
     - Fixed occasional test failures in t/10_fsopen_fh_leak.t and
       t/11_sopen_fh_leak.t by avoiding the problem of trying to open a file with
