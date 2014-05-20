@@ -59,11 +59,7 @@ MAIN: {
             },
 
             resources => {
-                repository => {
-                    type => 'git',
-                    url  => 'git://github.com/steve-m-hay/Win32-SharedFileOpen.git',
-                    web  => 'https://github.com/steve-m-hay/Win32-SharedFileOpen'
-                }
+                repository => 'https://github.com/steve-m-hay/Win32-SharedFileOpen'
             }
         },
 
