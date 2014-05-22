@@ -8,7 +8,7 @@ _________________
 
 v4.02 TODO
 
-    - Simplified repository meta-data for cleaner appearance on search.cpan.org.
+    - Simplified repository metadata for cleaner appearance on search.cpan.org.
 _________________
 
 v4.01 19 May 2014
@@ -70,7 +70,7 @@ v4.00 16 May 2014
     - Added $Trace to @EXPORT_OK as requested by Denby Angus
       <Denby.Angus@kisters.com.au>.
 
-    - Uploaded source code to GitHub and included repository URLS in meta data.
+    - Uploaded source code to GitHub and included repository URLs in metadata.
 
     - Included META.json file in addition to META.yml.
 
