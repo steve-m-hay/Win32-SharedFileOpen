@@ -92,28 +92,23 @@ MAIN: {
         },
 
         TEST_REQUIRES => {
-            'Config'          => '0',
-            'Errno'           => '0',
-            'FileHandle'      => '0',
-            'IO::File'        => '0',
-            'IO::Handle'      => '0',
-            'Symbol'          => '0',
-            'Test::More'      => '0',
-            'Time::HiRes'     => '0',
-            'Win32::WinError' => '0',
-            'perl'            => '5.008001',
-            'strict'          => '0',
-            'warnings'        => '0'
+            'FileHandle' => '0',
+            'IO::File'   => '0',
+            'IO::Handle' => '0',
+            'Test::More' => '0'
         },
 
         PREREQ_PM => {
+            'Carp'            => '0',
+            'Config'          => '0',
             'Errno'           => '0',
             'Exporter'        => '0',
             'Symbol'          => '0',
             'Time::HiRes'     => '0',
             'Win32::WinError' => '0',
             'XSLoader'        => '0',
-            'perl'            => '5.008001'
+            'strict'          => '0',
+            'warnings'        => '0'
         },
 
         clean => {
