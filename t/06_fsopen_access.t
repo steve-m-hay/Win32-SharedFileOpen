@@ -25,6 +25,8 @@ use Errno qw(EACCES ENOENT);
 use Test::More tests => 52;
 use Win32::WinError qw(ERROR_ACCESS_DENIED ERROR_FILE_NOT_FOUND);
 
+## no critic (Subroutines::ProhibitSubroutinePrototypes)
+
 sub new_filename();
 
 #===============================================================================

@@ -24,6 +24,8 @@ use Config qw(%Config);
 use Test::More tests => 45;
 use Time::HiRes qw(time);
 
+## no critic (Subroutines::ProhibitSubroutinePrototypes)
+
 sub new_filename();
 sub stderr(;$);
 

@@ -37,6 +37,8 @@ use Win32::WinError qw(
 );
 use XSLoader qw();
 
+## no critic (Subroutines::ProhibitSubroutinePrototypes)
+
 sub fsopen(*$$$);
 sub sopen(*$$$;$);
 sub new_fh();
@@ -177,7 +179,7 @@ sub AUTOLOAD {
 
     # Generate an in-line subroutine returning the required value.
     {
-        no strict 'refs';
+        no strict 'refs'; ## no critic (TestingAndDebugging::ProhibitNoStrict)
         *$AUTOLOAD = sub { return $value };
     }
 
