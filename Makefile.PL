@@ -86,6 +86,17 @@ MAIN: {
                             }
                         }
                     }
+                },
+
+                podcoveragetest => {
+                    description => 'POD coverage testing',
+                    prereqs => {
+                        test => {
+                            requires => {
+                                'Test::Pod::Coverage' => '0.08'
+                            }
+                        }
+                    }
                 }
             }
         },
