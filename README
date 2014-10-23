@@ -1,8 +1,3 @@
-________________________________________________________________________________
-
-                      Win32::SharedFileOpen, Version 4.03
-________________________________________________________________________________
-
 NAME
 
     Win32::SharedFileOpen - Open a file for shared reading and/or writing
@@ -79,4 +74,3 @@ LICENCE
     under the same terms as Perl itself, i.e. under the terms of either the GNU
     General Public License or the Artistic License, as specified in the LICENCE
     file.
-________________________________________________________________________________
