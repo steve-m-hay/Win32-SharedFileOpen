@@ -75,8 +75,8 @@ MAIN: {
 
         seek $fh, 0, 0;
         {
-            no warnings 'io';
-            is(<$fh>, undef, '... but not read');
+        no warnings 'io';
+        is(<$fh>, undef, '... but not read');
         }
 
         ok(close($fh), '... and the file closes ok');
@@ -89,8 +89,8 @@ MAIN: {
             diag("\$! = '$errno', \$^E = '$lasterror'");
 
         {
-            no warnings 'io';
-            ok(!print($fh "$str\n"), "... and we cannot print");
+        no warnings 'io';
+        ok(!print($fh "$str\n"), "... and we cannot print");
         }
 
         seek $fh, 0, 0;
@@ -110,8 +110,8 @@ MAIN: {
 
         seek $fh, 0, 0;
         {
-            no warnings 'io';
-            is(<$fh>, undef, '... but not read');
+        no warnings 'io';
+        is(<$fh>, undef, '... but not read');
         }
 
         ok(close($fh), '... and the file closes ok');
