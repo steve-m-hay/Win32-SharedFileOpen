@@ -2,6 +2,8 @@ Revision history for Perl distribution Win32-SharedFileOpen
 
 4.03 Development
 
+    - Fixed broken link for active bugs on the CPAN Request Tracker.
+
     - Added optional Changes testing (skipped unless AUTHOR_TESTING).
 
     - Reformatted Changes file as per CPAN::Changes::Spec.
