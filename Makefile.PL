@@ -144,7 +144,7 @@ MAIN: {
         }
     );
 
-    if  (eval { require ExtUtils::Constant; 1 }) {
+    if  (eval { require ExtUtils::Constant }) {
         my @oflags = qw(
             O_APPEND
             O_BINARY
