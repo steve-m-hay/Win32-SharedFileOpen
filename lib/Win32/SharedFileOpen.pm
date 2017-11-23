@@ -1328,7 +1328,7 @@ that is even leaner and meaner than using C<Symbol::gensym()>: the "First-Class
 Filehandle Trick".  It is described in an article by Mark-Jason Dominus called
 "Seven Useful Uses of Local", which first appeared in The Perl Journal and can
 also be found (at the time of writing) on his website at the URL
-F<http://perl.plover.com/local.html>.  It consists simply of the following:
+L<http://perl.plover.com/local.html>.  It consists simply of the following:
 
     my $fh = do { local *FH };
 
@@ -1530,22 +1530,22 @@ WILL NEED TO BE MODIFIED.>
 Patches, bug reports, suggestions or any other feedback is welcome.
 
 Patches can be sent as GitHub pull requests at
-F<https://github.com/steve-m-hay/Win32-SharedFileOpen/pulls>.
+L<https://github.com/steve-m-hay/Win32-SharedFileOpen/pulls>.
 
 Bug reports and suggestions can be made on the CPAN Request Tracker at
-F<https://rt.cpan.org/Public/Bug/Report.html?Queue=Win32-SharedFileOpen>.
+L<https://rt.cpan.org/Public/Bug/Report.html?Queue=Win32-SharedFileOpen>.
 
 Currently active requests on the CPAN Request Tracker can be viewed at
-F<https://rt.cpan.org/Public/Dist/Display.html?Status=Active;Queue=Win32-SharedFileOpen>.
+L<https://rt.cpan.org/Public/Dist/Display.html?Status=Active;Queue=Win32-SharedFileOpen>.
 
 Please test this distribution.  See CPAN Testers Reports at
-F<http://www.cpantesters.org/> for details of how to get involved.
+L<http://www.cpantesters.org/> for details of how to get involved.
 
 Previous test results on CPAN Testers Reports can be viewed at
-F<http://www.cpantesters.org/distro/W/Win32-SharedFileOpen.html>.
+L<http://www.cpantesters.org/distro/W/Win32-SharedFileOpen.html>.
 
 Please rate this distribution on CPAN Ratings at
-F<http://cpanratings.perl.org/rate/?distribution=Win32-SharedFileOpen>.
+L<http://cpanratings.perl.org/rate/?distribution=Win32-SharedFileOpen>.
 
 =head1 SEE ALSO
 
@@ -1586,16 +1586,16 @@ in the fsopen() function.
 The latest version of this module is available from CPAN (see
 L<perlmodlib/"CPAN"> for details) at
 
-F<https://metacpan.org/release/Win32-SharedFileOpen> or
+L<https://metacpan.org/release/Win32-SharedFileOpen> or
 
-F<http://search.cpan.org/dist/Win32-SharedFileOpen/> or
+L<http://search.cpan.org/dist/Win32-SharedFileOpen/> or
 
-F<http://www.cpan.org/authors/id/S/SH/SHAY/> or
+L<http://www.cpan.org/authors/id/S/SH/SHAY/> or
 
-F<http://www.cpan.org/modules/by-module/Win32/>.
+L<http://www.cpan.org/modules/by-module/Win32/>.
 
 The latest source code is available from GitHub at
-F<https://github.com/steve-m-hay/Win32-SharedFileOpen>.
+L<https://github.com/steve-m-hay/Win32-SharedFileOpen>.
 
 =head1 INSTALLATION
 
