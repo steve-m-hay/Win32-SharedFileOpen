@@ -1525,6 +1525,10 @@ or failure.
 B<THIS IS AN INCOMPATIBLE CHANGE.  EXISTING SOFTWARE THAT USES THESE FUNCTIONS
 WILL NEED TO BE MODIFIED.>
 
+=head1 KNOWN BUGS
+
+I<None>.
+
 =head1 FEEDBACK
 
 Patches, bug reports, suggestions or any other feedback is welcome.
