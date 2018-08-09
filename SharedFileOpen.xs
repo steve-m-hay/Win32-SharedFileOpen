@@ -528,7 +528,7 @@ _sopen(fh, file, oflag, shflag, ...)
         dMY_CXT;
         int pmode;
 
-        pmode = (items > 4 ? SvIV(ST(4)) : 0);
+        pmode = (items > 4 ? (int)SvIV(ST(4)) : 0);
 
         if (Win32SharedFileOpen_Sopen(aTHX_ aMY_CXT_
                 fh, file, oflag, shflag, pmode)) {
