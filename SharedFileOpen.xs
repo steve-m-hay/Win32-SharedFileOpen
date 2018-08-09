@@ -6,7 +6,8 @@
  *   C and XS portions of Win32::SharedFileOpen module.
  *
  * COPYRIGHT
- *   Copyright (C) 2001-2004, 2006, 2008, 2014 Steve Hay.  All rights reserved.
+ *   Copyright (C) 2001-2004, 2006, 2008, 2014, 2018 Steve Hay.  All rights
+ *   reserved.
  *
  * LICENCE
  *   This file is free software; you can redistribute it and/or modify it under
