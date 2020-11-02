@@ -1328,7 +1328,7 @@ that is even leaner and meaner than using C<Symbol::gensym()>: the "First-Class
 Filehandle Trick".  It is described in an article by Mark-Jason Dominus called
 "Seven Useful Uses of Local", which first appeared in The Perl Journal and can
 also be found (at the time of writing) on his website at the URL
-L<http://perl.plover.com/local.html>.  It consists simply of the following:
+L<https://perl.plover.com/local.html>.  It consists simply of the following:
 
     my $fh = do { local *FH };
 
@@ -1543,13 +1543,13 @@ Currently active requests on the CPAN Request Tracker can be viewed at
 L<https://rt.cpan.org/Public/Dist/Display.html?Status=Active;Queue=Win32-SharedFileOpen>.
 
 Please test this distribution.  See CPAN Testers Reports at
-L<http://www.cpantesters.org/> for details of how to get involved.
+L<https://www.cpantesters.org/> for details of how to get involved.
 
 Previous test results on CPAN Testers Reports can be viewed at
-L<http://www.cpantesters.org/distro/W/Win32-SharedFileOpen.html>.
+L<https://www.cpantesters.org/distro/W/Win32-SharedFileOpen.html>.
 
 Please rate this distribution on CPAN Ratings at
-L<http://cpanratings.perl.org/rate/?distribution=Win32-SharedFileOpen>.
+L<https://cpanratings.perl.org/rate/?distribution=Win32-SharedFileOpen>.
 
 =head1 SEE ALSO
 
@@ -1592,9 +1592,9 @@ L<perlmodlib/"CPAN"> for details) at
 
 L<https://metacpan.org/release/Win32-SharedFileOpen> or
 
-L<http://www.cpan.org/authors/id/S/SH/SHAY/> or
+L<https://www.cpan.org/authors/id/S/SH/SHAY/> or
 
-L<http://www.cpan.org/modules/by-module/Win32/>.
+L<https://www.cpan.org/modules/by-module/Win32/>.
 
 The latest source code is available from GitHub at
 L<https://github.com/steve-m-hay/Win32-SharedFileOpen>.
