@@ -7,7 +7,7 @@
 #   Test script to check fsopen() access modes.
 #
 # COPYRIGHT
-#   Copyright (C) 2001-2006, 2014 Steve Hay.  All rights reserved.
+#   Copyright (C) 2001-2006, 2014, 2023 Steve Hay.  All rights reserved.
 #
 # LICENCE
 #   This script is free software; you can redistribute it and/or modify it under
@@ -79,6 +79,9 @@ MAIN: {
         {
         no warnings 'io';
         is(<$fh>, undef, '... but not read');
+        # Clear the stream's error flag otherwise close() can fail (see
+        # GH#21187).
+        $fh->clearerr();
         }
 
         ok(close($fh), '... and the file closes ok');
@@ -114,6 +117,7 @@ MAIN: {
         {
         no warnings 'io';
         is(<$fh>, undef, '... but not read');
+        $fh->clearerr();
         }
 
         ok(close($fh), '... and the file closes ok');
