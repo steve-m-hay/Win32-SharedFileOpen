@@ -121,7 +121,7 @@ BEGIN {
 
     Exporter::export_ok_tags(qw(retry));
     
-    $VERSION = '4.05';
+    $VERSION = '4.06';
 
     # Get the ERROR_SHARING_VIOLATION constant loaded now, otherwise loading it
     # later the first time that we test for an error can actually interfere with
@@ -1620,11 +1620,11 @@ License or the Artistic License, as specified in the F<LICENCE> file.
 
 =head1 VERSION
 
-Version 4.05
+Version 4.06
 
 =head1 DATE
 
-02 Jul 2023
+TODO
 
 =head1 HISTORY
 
