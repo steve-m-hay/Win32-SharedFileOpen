@@ -2,7 +2,7 @@ Revision history for Perl distribution Win32-SharedFileOpen
 
 4.05 Development
 
-    - TODO
+    - Fix tests with perl-5.38.0.
 
 4.04 2020-11-25
 
