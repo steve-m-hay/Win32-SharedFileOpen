@@ -1609,7 +1609,8 @@ Steve Hay E<lt>L<shay@cpan.org|mailto:shay@cpan.org>E<gt>.
 
 =head1 COPYRIGHT
 
-Copyright (C) 2001-2008, 2013-2015, 2018, 2020 Steve Hay.  All rights reserved.
+Copyright (C) 2001-2008, 2013-2015, 2018, 2020, 2023 Steve Hay.  All rights
+reserved.
 
 =head1 LICENCE
 
@@ -1623,7 +1624,7 @@ Version 4.05
 
 =head1 DATE
 
-TODO
+02 Jul 2023
 
 =head1 HISTORY
 
