@@ -43,7 +43,7 @@ BEGIN {
         return "test$i.txt";
     }
 
-    use_ok('Win32::SharedFileOpen', qw(:DEFAULT new_fh));
+    use_ok('Win32::SharedFileOpen', qw(:DEFAULT gensym new_fh));
 }
 
 #===============================================================================
@@ -75,7 +75,7 @@ MAIN: {
         is($errno, ENOENT, '... and sets $! correctly');
         is($lasterror, ERROR_FILE_NOT_FOUND, '... and sets $^E correctly');
 
-        $fh = new_fh();
+        $fh = gensym();
         $ret = sopen($fh, $file, O_WRONLY | O_CREAT, SH_DENYNO, S_IWRITE);
         ($errno, $lasterror) = ($!, $^E);
         ok($ret, 'sopen() succeeds with O_WRONLY | O_CREAT') or
@@ -113,7 +113,7 @@ MAIN: {
         ok(close($fh), '... and the file closes ok');
         is(-s $file, $strlen + 2, '... and the file size is still ok');
 
-        $fh = new_fh();
+        $fh = gensym();
         $ret = sopen($fh, $file, O_WRONLY, SH_DENYNO, S_IWRITE);
         ($errno, $lasterror) = ($!, $^E);
         ok($ret, 'sopen() now succeeds with O_WRONLY') or
@@ -131,7 +131,7 @@ MAIN: {
         ok(close($fh), '... and the file closes ok');
         is(-s $file, $strlen + 2, '... and the file size is ok');
 
-        $fh = new_fh();
+        $fh = gensym();
         $ret = sopen($fh, $file, O_WRONLY | O_APPEND, SH_DENYNO);
         ($errno, $lasterror) = ($!, $^E);
         ok($ret, 'sopen() succeeds with O_WRONLY | O_APPEND') or
