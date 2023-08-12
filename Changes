@@ -1,5 +1,9 @@
 Revision history for Perl distribution Win32-SharedFileOpen
 
+4.07 Development
+
+    - TODO
+
 4.06 2023-08-12
 
     - Fix t/06_fsopen_access.t and t/07_sopen_access.t with perl-5.19.1 and
