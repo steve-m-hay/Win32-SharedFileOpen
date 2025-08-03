@@ -87,7 +87,7 @@ MAIN: {
         {
         no warnings 'io';
         is(<$fh>, undef, '... but not read');
-        # Clear the stream's error flag otherwise close() can fail (see
+        # Clear the stream's error flag otherwise close() can fail (see Perl
         # GH#21187).
         $fh->clearerr();
         }
