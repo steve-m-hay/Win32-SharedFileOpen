@@ -1542,11 +1542,12 @@ L<https://rt.cpan.org/Public/Bug/Report.html?Queue=Win32-SharedFileOpen>.
 Currently active requests on the CPAN Request Tracker can be viewed at
 L<https://rt.cpan.org/Public/Dist/Display.html?Queue=Win32-SharedFileOpen>.
 
-Please test this distribution.  See CPAN Testers Reports at
+Please test this distribution.  See CPAN Testers at
 L<https://www.cpantesters.org/> for details of how to get involved.
 
-Previous test results on CPAN Testers Reports can be viewed at
-L<https://www.cpantesters.org/distro/W/Win32-SharedFileOpen.html>.
+Previous test results on CPAN Testers can be viewed at
+L<https://www.cpantesters.org/distro/W/Win32-SharedFileOpen.html> and
+L<https://fast2-matrix.cpantesters.org/?dist=Win32-SharedFileOpen>.
 
 =head1 SEE ALSO
 
